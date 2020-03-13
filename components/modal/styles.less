@@ -1,0 +1,53 @@
+.modal {
+    &__overlay {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+
+        &.overlay-center {
+            align-items: center;
+        }
+
+        &.overlay-top {
+            align-items: flex-start;
+            padding-top: 80px;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        width: fit-content;
+        max-width: calc(100vw - 48px);
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &__content {
+        padding: 24px;
+        padding-top: 0;
+        max-height: calc(100vh - 232px);
+        overflow: auto;
+    }
+    &__header {
+        font-size: 22px;
+        line-height: 24px;
+        font-weight: 500;
+        min-height: 74px;
+        padding: 24px;
+        padding-right: 72px;
+    }
+
+    &__close-button {
+        position: absolute;
+        z-index: 100;
+        top: 24px;
+        right: 24px;
+        background-color: transparent;
+    }
+}

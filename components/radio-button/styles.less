@@ -1,0 +1,57 @@
+
+.radio-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    &__button{
+        width: 16px;
+        height: 16px;
+        border: 1px solid @colorBorder;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: @colorWhite;
+
+        &.checked,
+        &:hover {
+            border: 1px solid @colorBasicFirst;
+        }
+
+        &.disabled,
+        &.disabled:hover {
+            border: 1px solid @colorBorder;
+            background-color: @colorDisabled;
+            cursor: default;
+
+            & .radio-btn__check-mark {
+                background-color: #BFBFBF;
+            }
+        }
+    }
+
+    &__check-mark {
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: @colorBasicFirst;
+        border-radius: 50%;
+    }
+
+    &__label {
+        margin-top: -3px;
+        margin-left: 16px;
+        display: inline-block;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        cursor: default;
+
+        &.clickable {
+            cursor: pointer;
+        }
+    }
+}

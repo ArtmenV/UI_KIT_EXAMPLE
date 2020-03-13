@@ -1,0 +1,145 @@
+.react-datepicker{
+    background-color: @colorWhite;
+    position: relative;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__input-container {
+        position: relative;
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+            right: 12px;
+            width: 15px;
+            height: 15px;
+            z-index: 1;
+            background: url("./calendar-icon.svg");
+            pointer-events: none;
+        }
+    }
+
+    &__day {
+        width: 36px;
+        height: 30px;
+        background-color: @colorWhite;
+        color: @colorFontPrimary;
+        outline: none;
+        border-radius: 0;
+        margin: 0;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+        line-height: 30px;
+        cursor: pointer;
+
+        &:hover {
+            background: #BAE7FF;
+        }
+
+        &:active {
+            color: @colorWhite;
+            background-color: #40A9FF;
+        }
+
+        &--selected {
+            background: #BAE7FF;
+            border: 1px solid @colorBasicFirst;
+            color: @colorBasicFirst;
+        }
+
+        &--outside-month {
+            color: #BFBFBF;
+        }
+    }
+
+    &__day-names {
+        display: none;
+    }
+
+    &__week {
+        white-space: nowrap;
+    }
+
+    &__month {
+        margin: 8px 12px;
+    }
+
+    &__header {
+        text-align: center;
+        border-bottom: 1px solid @colorBorder;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 9px 14px;
+        position: relative;
+    }
+
+    &__today-button {
+        color: @colorBasicFirst;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        border-top: 1px solid @colorBorder;
+    }
+
+    &__navigation {
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        font-size:0;
+        outline: none;
+        border: none;
+        width: 11px;
+        height: 11px;
+        background: url("./double-arrow.svg") center no-repeat;
+        cursor: pointer;
+
+        &--previous {
+            left: 15px;
+        }
+
+        &--next {
+            right: 15px;
+            transform: rotate(180deg);
+        }
+    }
+
+    &-popper {
+        position: absolute;
+        z-index: 100;
+
+        &[data-placement^="bottom"] {
+            margin-top: 10px;
+            &::before {
+                top: -5px;
+            }
+        }
+        &[data-placement^="top"] {
+            margin-bottom: 10px;
+
+            &::before {
+                bottom: -5px;
+            }
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: @colorWhite;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            z-index: 1;
+            left: 50px;
+        }
+    }
+}
+
+.date-input {
+    padding-right: 35px;
+}

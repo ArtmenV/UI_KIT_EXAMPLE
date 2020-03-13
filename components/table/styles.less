@@ -1,0 +1,45 @@
+.data-table {
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 22px;
+    border-collapse: collapse;
+}
+
+.table-row {
+    border-bottom: 1px solid @colorBorder;
+
+    &--selected {
+        background-color: #FAFAFA !important;
+    }
+
+    &:hover {
+        background-color: @colorHover;
+    }
+}
+
+.table-head-row {
+    font-weight: 500;
+    background-color: #FAFAFA;
+
+    &:hover {
+        background-color: #FAFAFA;   
+    }
+
+    & .table-cell--vertical-bordered {
+        border-top: 1px solid @colorBorder;
+    }
+}
+
+.table-cell {
+    padding: 16px;
+
+    &--vertical-bordered {
+        border-left: 1px solid @colorBorder;
+
+        &:last-child {
+            border-right: 1px solid @colorBorder;
+        }
+    }
+}

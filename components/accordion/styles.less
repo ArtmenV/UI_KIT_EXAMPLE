@@ -1,0 +1,58 @@
+.accordion {
+    &__header {
+        margin-bottom: 16px;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: normal;
+        cursor: pointer;
+    }
+
+    &__label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 40px;
+    }
+
+    &__button {
+        width: 16px;
+        height: 8px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        transition: transform 0.2s linear;
+
+        &.accordion__opened {
+            transform: rotate(180deg);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 10px;
+            border-radius: 2px;
+            background-color: @colorBasicFirst;
+            top: -1px;
+        }
+
+        &::before {
+            transform: rotate(131deg);
+            left: 4px;
+        }
+        &::after {
+            transform: rotate(-131deg);
+            right: 4px;
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+        transition: height 0.2s ease-in;
+
+        &.accordion__opened {
+            overflow: initial;
+        }
+    }
+}
